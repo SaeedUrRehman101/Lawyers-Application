@@ -51,14 +51,14 @@
   width: 100%;
 }
 .todo .todo-list-wrapper #todo-list li:last-child .task-container {
-  border-bottom: 0;
+  /* border-bottom: 0; */
   padding-bottom: 0;
 }
 .todo .todo-list-wrapper #todo-list li .task-container {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  width: 100%;
+  width: 50%;
   border-bottom: 1px solid #EDEDED;
   box-sizing: border-box;
   position: relative;
@@ -70,7 +70,12 @@
 .todo .todo-list-wrapper #todo-list li .task-container .d-flex div {
   text-align: right;
 }
+.todoBorder{
+  border: none;
+  cursor: pointer;
+}
 .todo .todo-list-wrapper #todo-list li .task-container .task-label {
+  width: 80%;
   display: table;
   font-size: 16px;
   font-weight: 400;

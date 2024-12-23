@@ -26,7 +26,7 @@
       <div class="page-header">
         <div class="header-wrapper row m-0">
           <div class="header-logo-wrapper col-auto p-0">
-            <div class="logo-wrapper"><a href="index.html"> <img class="img-fluid for-light" src="../assets/Dashboard/images/logo/logo.png" alt=""><img class="img-fluid for-dark" src="../assets/Dashboard/images/logo/logo_dark.png" alt=""></a></div>
+            <div class="logo-wrapper"><a href="index.html"> <img class="img-fluid for-light" src="../assets/Dashboard/images/logo/logo.png" alt=""><img class="img-fluid for-dark" src="../assets/Dashboard/images/logo/logo.png" alt=""></a></div>
             <div class="toggle-sidebar">
               <svg class="sidebar-toggle"> 
                 <use href="assets/Dashboard/svg/icon-sprite.svg#stroke-animation"></use>
@@ -57,188 +57,6 @@
                   <input type="text" placeholder="Search here...">
                 </div>
               </li>
-              <li class="onhover-dropdown"> 
-                <div class="notification-box">
-                  <svg> 
-                    <use href="assets/Dashboard/svg/icon-sprite.svg#Bell"></use>
-                  </svg>
-                </div>
-                <div class="onhover-show-div notification-dropdown"> 
-                  <h6 class="f-18 mb-0 dropdown-title">Notifications</h6>
-                  <div class="notification-card">
-                    <ul>
-                      <li>
-                        <div class="user-notification">
-                          <div><img src="../assets/Dashboard/images/avtar/2.jpg" alt="avatar"></div>
-                          <div class="user-description"><a href="letter-box.html">
-                              <h4>You have new finical page design.</h4></a><span>Today 11:45pm</span></div>
-                        </div>
-                        <div class="notification-btn">
-                          <button class="btn btn-pill btn-primary" type="button" title="btn btn-pill btn-primary">Accpet</button>
-                          <button class="btn btn-pill btn-secondary" type="button" title="btn btn-pill btn-primary">Decline</button>
-                        </div>
-                        <div class="show-btn"><a href="index.html"> <span>Show</span></a></div>
-                      </li>
-                      <li>
-                        <div class="user-notification">
-                          <div><img src="../assets/Dashboard/images/avtar/17.jpg" alt="avatar"></div>
-                          <div class="user-description"><a href="letter-box.html">
-                              <h4>Congrats! you all task for today.</h4></a><span>Today 01:05pm</span></div>
-                        </div>
-                        <div class="notification-btn">
-                          <button class="btn btn-pill btn-primary" type="button" title="btn btn-pill btn-primary">Accpet</button>
-                          <button class="btn btn-pill btn-secondary" type="button" title="btn btn-pill btn-primary">Decline</button>
-                        </div>
-                        <div class="show-btn"><a href="index.html"> <span>Show</span></a></div>
-                      </li>
-                      <li> 
-                        <div class="user-notification">
-                          <div> <img src="../assets/Dashboard/images/avtar/18.jpg" alt="avatar"></div>
-                          <div class="user-description"><a href="letter-box.html">
-                              <h4>You have new in landing page design.</h4></a><span>Today 06:55pm</span></div>
-                        </div>
-                        <div class="notification-btn">
-                          <button class="btn btn-pill btn-primary" type="button" title="btn btn-pill btn-primary">Accpet</button>
-                          <button class="btn btn-pill btn-secondary" type="button" title="btn btn-pill btn-primary">Decline</button>
-                        </div>
-                        <div class="show-btn"><a href="index.html"> <span>Show</span></a></div>
-                      </li>
-                      <li>
-                        <div class="user-notification">
-                          <div><img src="../assets/Dashboard/images/avtar/19.jpg" alt="avatar"></div>
-                          <div class="user-description"><a href="letter-box.html">
-                              <h4>Congrats! you all task for today.</h4></a><span>Today 06:55pm</span></div>
-                        </div>
-                        <div class="notification-btn">
-                          <button class="btn btn-pill btn-primary" type="button" title="btn btn-pill btn-primary">Accpet</button>
-                          <button class="btn btn-pill btn-secondary" type="button" title="btn btn-pill btn-primary">Decline</button>
-                        </div>
-                        <div class="show-btn"> <a href="index.html"> <span>Show</span></a></div>
-                      </li>
-                      <li> <a class="f-w-700" href="letter-box.html">Check all </a></li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-              <li class="onhover-dropdown">
-                <svg>
-                  <use href="assets/Dashboard/svg/icon-sprite.svg#Bookmark"></use>
-                </svg>
-                <div class="onhover-show-div bookmark-flip">
-                  <div class="flip-card">
-                    <div class="flip-card-inner">
-                      <div class="front">
-                        <h6 class="f-18 mb-0 dropdown-title">Bookmark</h6>
-                        <ul class="bookmark-dropdown">
-                          <li>
-                            <div class="row">
-                              <div class="col-4 text-center"><a href="form-validation.html">
-                                  <div class="bookmark-content">
-                                    <div class="bookmark-icon bg-light-primary"><i data-feather="file-text"></i></div><span>Forms</span>
-                                  </div></a></div>
-                              <div class="col-4 text-center"><a href="user-profile.html">
-                                  <div class="bookmark-content"> 
-                                    <div class="bookmark-icon bg-light-secondary"><i data-feather="user"></i></div><span>Profile</span>
-                                  </div></a></div>
-                              <div class="col-4 text-center"><a href="bootstrap-basic-table.html">
-                                  <div class="bookmark-content">
-                                    <div class="bookmark-icon bg-light-warning"> <i data-feather="server"> </i></div><span>Tables </span>
-                                  </div></a></div>
-                            </div>
-                          </li>
-                          <li class="text-centermedia-body"> <a class="flip-btn f-w-700" id="flip-btn" href="javascript:void(0)">Add New Bookmark</a></li>
-                        </ul>
-                      </div>
-                      <div class="back">
-                        <ul>
-                          <li>
-                            <div class="bookmark-dropdown flip-back-content">
-                              <input type="text" placeholder="search...">
-                            </div>
-                          </li>
-                          <li><a class="f-w-700 d-block flip-back" id="flip-back" href="javascript:void(0)">Back</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="onhover-dropdown"> 
-                <div class="message position-relative">
-                  <svg>
-                    <use href="assets/Dashboard/svg/icon-sprite.svg#Message"></use>
-                  </svg><span class="rounded-pill badge-danger"></span>
-                </div>
-                <div class="onhover-show-div message-dropdown">
-                  <h6 class="f-18 mb-0 dropdown-title">Message</h6>
-                  <ul>
-                    <li>
-                      <div class="d-flex align-items-start">
-                        <div class="message-img bg-light-primary"><img src="../assets/Dashboard/images/user/3.jpg" alt=""></div>
-                        <div class="flex-grow-1">
-                          <h5><a href="letter-box.html">Emay Walter</a></h5>
-                          <p>Do you want to go see movie?</p>
-                        </div>
-                        <div class="notification-right"><i data-feather="x"></i></div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="d-flex align-items-start">
-                        <div class="message-img bg-light-primary"><img src="../assets/Dashboard/images/user/6.jpg" alt=""></div>
-                        <div class="flex-grow-1">
-                          <h5> <a href="letter-box.html">Jason Borne</a></h5>
-                          <p>Thank you for rating us.</p>
-                        </div>
-                        <div class="notification-right"><i data-feather="x"></i></div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="d-flex align-items-start"> 
-                        <div class="message-img bg-light-primary"><img src="../assets/Dashboard/images/user/10.jpg" alt=""></div>
-                        <div class="flex-grow-1">
-                          <h5> <a href="letter-box.html">Sarah Loren</a></h5>
-                          <p>What`s the project report update?</p>
-                        </div>
-                        <div class="notification-right"><i data-feather="x"></i></div>
-                      </div>
-                    </li>
-                    <li> <a class="f-w-700" href="private-chat.html">Check all</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li class="cart-nav onhover-dropdown">
-                <div class="cart-box"> 
-                  <svg>
-                    <use href="assets/Dashboard/svg/icon-sprite.svg#Buy"></use>
-                  </svg>
-                </div>
-                <div class="cart-dropdown onhover-show-div">
-                  <h6 class="f-18 mb-0 dropdown-title">Cart</h6>
-                  <ul>
-                    <li>
-                      <div class="d-flex"><img class="img-fluid b-r-5 img-50" src="../assets/Dashboard/images/ecommerce/05.jpg" alt="">
-                        <div class="flex-grow-1"> <span>Women's Track Suit</span>
-                          <h6 class="font-primary">8 x $65.00</h6>
-                        </div>
-                        <div class="close-circle"><a class="bg-primary" href="#"><i data-feather="x"></i></a></div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="d-flex"><img class="img-fluid b-r-5 img-50" src="../assets/Dashboard/images/ecommerce/02.jpg" alt="">
-                        <div class="flex-grow-1"><span>Men's Jacket</span>
-                          <h6 class="font-primary">10 x $50.00</h6>
-                        </div>
-                        <div class="close-circle"><a class="bg-primary" href="#"><i data-feather="x"></i></a></div>
-                      </div>
-                    </li>
-                    <li class="total">
-                      <h6 class="mb-0">Order Total :<span class="f-right">$1020.00</span></h6>
-                    </li>
-                    <li class="text-center"> <a href="cart.html">
-                        <button class="btn btn-outline-primary" type="button">View Cart</button></a><a class="btn btn-primary view-checkout" href="checkout.html">Checkout  </a></li>
-                  </ul>
-                </div>
-              </li>
               <li>
                 <div class="mode">
                   <svg class="for-dark">
@@ -252,7 +70,7 @@
               <li class="language-nav">
                 <div class="translate_wrapper">
                   <div class="current_lang">
-                    <div class="lang"><i class="flag-icon flag-icon-gb"></i><span class="lang-txt box-col-none">EN</span></div>
+                    <div class="lang"><i class="flag-icon flag-icon-pk"></i><span class="lang-txt box-col-none">PK</span></div>
                   </div>
                   <div class="more_lang">
                     <div class="lang selected" data-value="en"><i class="flag-icon flag-icon-us"></i><span class="lang-txt">English<span> (US)</span></span></div>
@@ -290,8 +108,9 @@
                 <ul class="profile-dropdown onhover-show-div">
                 @if (Auth::guard('lawyers')->check() && Auth::guard('lawyers')->user()->role === 'lawyer')
                   <li><a href="{{ route('Lawyer_Panel') }}"><i data-feather="user"></i><span>Account</span></a></li>
-                @elseif(Auth::check() && Auth::user()->role === 'user')
+                @elseif(Auth::check() && Auth::user()->role === 'user' || Auth::check() && Auth::user()->role === 'admin')
                   <li><a href="{{ route('User_Panel') }}"><i data-feather="user"></i><span>Account</span></a></li>
+                  <li><a href="{{ route('Lawyer_Web') }}"><i data-feather="user"></i><span>Website</span></a></li>
                 @endif
                   <li><a href="letter-box.html"><i data-feather="mail"></i><span>Inbox</span></a></li>
                   <li><a href="task.html"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
@@ -324,7 +143,7 @@
         <!-- Page Sidebar Start-->
         <div class="sidebar-wrapper" data-layout="stroke-svg">
           <div>
-            <div class="logo-wrapper"><a href="index.html"> <img class="img-fluid for-light" src="../assets/Dashboard/images/logo/logo.png" alt=""><img class="img-fluid for-dark" src="../assets/Dashboard/images/logo/logo_dark.png" alt=""></a>
+            <div class="logo-wrapper"><a href="index.html"> <img class="img-fluid for-light" src="/assets/lawyer/img/logo/header5-logo.png" alt=""><img class="img-fluid for-dark" src="/assets/lawyer/img/logo/header5-logo.png" alt=""></a>
               <div class="toggle-sidebar">
                 <svg class="sidebar-toggle"> 
                   <use href="assets/Dashboard/svg/icon-sprite.svg#toggle-icon"></use>
@@ -357,6 +176,15 @@
                       <use href="assets/Dashboard/svg/icon-sprite.svg#fill-email"></use>
                     </svg><span>Dashboard</span></a>
                   </li>
+                  <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="{{ route("Lawyer_Web") }}">
+                    <svg class="stroke-icon">
+                      <use href="assets/Dashboard/svg/icon-sprite.svg#stroke-ecommerce"></use>
+                    </svg>
+                    <svg class="fill-icon">
+                      {{-- <use href="assets/Dashboard/svg/icon-sprite.svg#fill-email"></use> --}}
+                      <use href="assets/Dashboard/svg/icon-sprite.svg#stroke-ecommerce"></use>
+                    </svg><span>Website</span></a>
+                  </li>
                   @if (Auth::guard('lawyers')->check() && Auth::guard('lawyers')->user()->role === 'lawyer')
                     {{-- <li><a href="{{ route('Lawyer_Panel') }}"><i data-feather="user"></i><span>Account</span></a></li> --}}
                     <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="{{ route("Lawyer_Panel") }}">
@@ -367,7 +195,15 @@
                         <use href="assets/Dashboard/svg/icon-sprite.svg#fill-email"></use>
                       </svg><span>Account</span></a>
                     </li>
-                  @elseif(Auth::check() && Auth::user()->role === 'user')
+                    <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="{{ route("Law_Firms") }}">
+                      <svg class="stroke-icon">
+                        <use href="assets/Dashboard/svg/icon-sprite.svg#stroke-learning"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="assets/Dashboard/svg/icon-sprite.svg#stroke-learning"></use>
+                      </svg><span>Add Law Firms</span></a>
+                    </li>
+                  @elseif(Auth::check() && Auth::user()->role === 'user' || Auth::check() && Auth::user()->role === 'admin')
                   <li class="sidebar-list"><i class="fa fa-thumb-tack"></i><a class="sidebar-link sidebar-title link-nav" href="{{ route("User_Panel") }}">
                     <svg class="stroke-icon">
                       <use href="assets/Dashboard/svg/icon-sprite.svg#stroke-user"></use>
@@ -408,37 +244,6 @@
                   <h3>@yield("titel")</h3>
                   {{-- <h3>Default Dashboard </h3> --}}
                 </div>
-                <div class="col-5 d-none d-xl-block">
-                  <!-- Page Sub Header Start-->
-                  <div class="left-header main-sub-header p-0">
-                    <div class="left-menu-header">
-                      <ul class="header-left"> 
-                        <li class="onhover-dropdown"> <span class="f-w-700">General </span>
-                        </li>
-                        <li class="onhover-dropdown"><span class="f-w-700">Components</span>
-                        </li>
-                        <li class="onhover-dropdown"> <span class="f-w-700">Applications</span>
-                        </li>
-                        <li class="onhover-dropdown"><span class="f-w-700">Pages</span>
-                        </li>
-                        <li class="onhover-dropdown p-0"><span class="f-w-700">Miscellaneous</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!-- Page Sub Header end
-                  -->
-                </div>
-                <div class="col-xl-3 col-sm-5 box-col-4">
-                  <ol class="breadcrumb"> 
-                    <li class="breadcrumb-item"><a href="index.html">
-                        <svg class="stroke-icon">
-                          <use href="assets/Dashboard/svg/icon-sprite.svg#stroke-home"></use>
-                        </svg></a></li>
-                    <li class="breadcrumb-item">Dashboard</li>
-                    <li class="breadcrumb-item active">Default</li>
-                  </ol>
-                </div>
               </div>
             </div>
           </div>
@@ -451,7 +256,7 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-6 p-0 footer-copyright">
-                <p class="mb-0">Copyright 2024 © Zono theme by pixelstrap.</p>
+                <p class="mb-0">Copyright 2024 © Saeed Ur Rehman.</p>
               </div>
               <div class="col-md-6 p-0">
                 <p class="heart mb-0">Hand crafted &amp; made with

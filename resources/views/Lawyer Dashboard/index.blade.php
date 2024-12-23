@@ -34,7 +34,11 @@
     <link rel="stylesheet" type="text/css" href="../assets/Dashboard/css/responsive.css">
 @endpush
 @section("titel")
+@if (Auth::guard('lawyers')->check() && Auth::guard('lawyers')->user()->role == 'lawyer')
 Default Dashboard
+@else
+Booked Appointments
+@endif
 @endsection
 @section('content')
   <!-- Container-fluid starts-->
@@ -44,9 +48,11 @@ Default Dashboard
         <div class="card"> 
           <div class="card-body">
             <div class="list-product-header">
-              <div> 
+              {{-- <div>
+                @if (Auth::guard('lawyers')->check() && Auth::guard('lawyers')->user()->role == 'lawyer')
                 <a class="btn btn-primary" href="add-products.html"><i class="fa fa-plus"></i>Add User</a>
-              </div>
+                @endif
+              </div> --}}
             </div>
             <div class="list-product">
               @if (Auth::guard('lawyers')->check() && Auth::guard('lawyers')->user()->role == 'lawyer')
@@ -68,35 +74,36 @@ Default Dashboard
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach ($lawyerAppointments as $values)
                   <tr class="product-removes">
                     <td>
-                      <p class="bg-dark-subtle text-dark text-center"></p>
+                      <p class="bg-dark-subtle text-dark text-center">{{ $values->id }}</p>
                     </td>
                     <td> 
                       <div class="product-names">
                         <div class="light-product-box">
-                          <img class="img-fluid" src="" alt="laptop">
+                          <img class="img-fluid" src="{{ $values->image ? asset('assets/Dashboard/user_Images').'/'.$values->image : asset('assets/Dashboard/images/user/user.png') }}" alt="laptop">
                         </div>
-                        <p></p>
+                        <p>{{ $values->userName }}</p>
                       </div>
                     </td>
                     <td> 
-                      <p class="">{{ Auth::guard('lawyers')->user()->lawyerName }}</p>
+                      <p class="">{{ $values->email }}</p>
                     </td>
                     <td> 
-                      <p class=""></p>
+                      <p class="">{{ $values->dob }}</p>
                     </td>
                     <td> 
-                      <p class=""></p>
+                      <p class="">{{ $values->contact }}</p>
                     </td>
                     <td> 
-                      <p class=""></p>
+                      <p class="">{{ $values->states }}</p>
                     </td>
                     <td> 
-                      <p class=""></p>
+                      <p class="">{{ $values->Address }}</p>
                     </td>
                     <td> 
-                      <p class=""></p>
+                      <p class="">{{ $values->role }}</p>
                     </td>
                     <td> 
                       <div class="product-action"><a href="add-products.html"> 
@@ -109,6 +116,8 @@ Default Dashboard
                       </div>
                     </td>
                   </tr>
+                  @endforeach
+                  
                 </tbody>
               </table>
               @elseif (Auth::check() && Auth::user()->role == 'admin')
@@ -183,60 +192,51 @@ Default Dashboard
                   <tr> 
                     <th>
                       <div class="form-check"> 
-                        <input class="form-check-input checkbox-primary" type="checkbox">
                       </div>
                     </th>
-                    <th> <span class="f-light f-w-600">User Id</span></th>
+                    <th> <span class="f-light f-w-600">Lawyer</span></th>
                     <th> <span class="f-light f-w-600">Email</span></th>
-                    <th> <span class="f-light f-w-600">DOB</span></th>
                     <th> <span class="f-light f-w-600">Contact</span></th>
-                    <th> <span class="f-light f-w-600">State</span></th>
                     <th> <span class="f-light f-w-600">Address</span></th>
-                    <th> <span class="f-light f-w-600">Role</span></th>
-                    <th> <span class="f-light f-w-600">Action</span></th>
+                    <th> <span class="f-light f-w-600">Slots</span></th>
                   </tr>
                 </thead>
-                <tbody> 
+                <tbody>
+                  @foreach ($appointment as $booked)
                   <tr class="product-removes">
-                    <td>
-                      <div class="form-check"> 
-                        <input class="form-check-input checkbox-primary" type="checkbox">
-                      </div>
-                    </td>
-                    <td> 
-                      <div class="product-names">
-                        <div class="light-product-box"><img class="img-fluid" src="assets/Dashboard/images/dashboard-8/product-categories/laptop.png" alt="laptop"></div>
-                        <p>Apple Desktop 2024</p>
-                      </div>
-                    </td>
-                    <td> 
-                      <p class="f-light">02145YK796</p>
-                    </td>
-                    <td> 
-                      <p class="f-light">Laptops</p>
-                    </td>
-                    <td> 
-                      <p class="f-light">56000.00</p>
-                    </td>
-                    <td> 
-                      <p class="f-light">13</p>
-                    </td>
-                    <td> <span class="badge badge-light-secondary">Sold Out</span></td>
-                    <td> 
-                      <div class="rating"><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star txt-warning"></i><i class="fa fa-star f-light"></i></div>
-                    </td>
-                    <td> 
-                      <div class="product-action"><a href="add-products.html"> 
-                          <svg>    
-                            <use href="assets/Dashboard/svg/icon-sprite.svg#edit-content"></use>
-                          </svg></a>
-                        <svg>
-                          <use href="assets/Dashboard/svg/icon-sprite.svg#trash1"></use>
-                        </svg>
-                      </div>
-                    </td>
+                      <td>
+                          <div class="form-check"> 
+                          </div>
+                      </td>
+                      <td>
+                        @php
+                            // Find the lawyer related to this appointment
+                            $lawyer = $getLawyer->firstWhere('id', $booked->lawyerId);
+                        @endphp
+                        <div class="product-names">
+                            <div class="light-product-box">
+                                <img class="img-fluid" src="{{ asset('assets/Dashboard/Lawyer_Image/'.$lawyer->image) }}" alt="laptop">
+                                {{-- <img class="img-fluid" src="assets/Dashboard/images/dashboard-8/product-categories/laptop.png" alt="laptop"> --}}
+                            </div>
+                            
+                            <p>{{ $lawyer ? $lawyer->lawyerName : 'Lawyer not found' }}</p>
+                        </div>
+                      </td>
+                      <td> 
+                          <p class="f-light">{{ $lawyer->email }}</p>
+                      </td>
+                      <td> 
+                          <p class="f-light">{{ $lawyer->contact }}</p>
+                      </td>
+                      <td> 
+                          <p class="f-light">{{ $booked->service }}</p>
+                      </td>
+                      <td> 
+                          <p class="f-light">{{ $booked->slots }}</p>
+                      </td>
                   </tr>
-                </tbody>
+                  @endforeach
+              </tbody>              
               </table>
               @endif
             </div>

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('experience')->nullable();
             $table->string('about')->nullable();
             $table->string('working_Place')->nullable();
-            $table->date("Lawyer_dob")->nullable();
         });
     }
 

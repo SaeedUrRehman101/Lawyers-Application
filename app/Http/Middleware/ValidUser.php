@@ -25,7 +25,7 @@ class ValidUser
             // return redirect()->route("Dashboard");
         }
         if(!Auth::user()->role === 'user' || !Auth::user()->role === 'admin'){
-            return redirect()->route("adolt");
+            return redirect()->route("Legalt");
         }
         if (Auth::guard('lawyers')->check()) {
             if(Auth::guard('lawyers')->user()->role === 'lawyer'){

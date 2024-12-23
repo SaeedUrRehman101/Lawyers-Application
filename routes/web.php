@@ -1,23 +1,46 @@
 <?php
 
+use App\Http\Controllers\law_FirmsController;
 use App\Http\Controllers\lawyersController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get("/",function(){
-    return view("Lawyer Website/index");
-})->name("adolt");
+// Route::get("/",function(){
+//     return view("Lawyer Website.index");
+// })->name("Legalt");
+
+Route::get("/",[law_FirmsController::class,"ViewServices"])->name("Lawyer_Web");
+
+
+// Route::get('dashboard', function () {
+//     $userRole = Auth::user()->role;
+//     if ($userRole === 'admin') {
+//         // Admin view with all users
+//         $controller = app(UserController::class); // Create an instance of UserController
+//         return $controller->allUsers(); // Call the allUsers method
+//     } 
+// return view('Lawyer Dashboard.index');
+// })->name("Dashboard")->middleware(["auth:lawyers,web","dashmin:user,lawyer"]);
 
 Route::get('dashboard', function () {
     $userRole = Auth::user()->role;
+
     if ($userRole === 'admin') {
-        // Admin view with all users
+        // Call the admin-specific method
         $controller = app(UserController::class); // Create an instance of UserController
         return $controller->allUsers(); // Call the allUsers method
-    } 
-return view('Lawyer Dashboard.index');
-})->name("Dashboard")->middleware(["auth:lawyers,web","dashmin:user,lawyer"]);
+    } elseif ($userRole === 'lawyer') {
+        // Call the lawyers method for lawyer role
+        $lawyerController = app(UserController::class);
+        return $lawyerController->lawyers();
+    }
+
+    // For non-admin and non-lawyer users, call showAppointment
+    $lawFirmsController = app(law_FirmsController::class);
+    return $lawFirmsController->showAppointment();
+})->name("Dashboard")->middleware(["auth:lawyers,web", "dashmin:user,lawyer"]);
+
 
 Route::view('login',"Lawyer Dashboard.login_one")->name("login");
 
@@ -36,6 +59,8 @@ Route::get("SignIn",function(){
 Route::get('Lawyer_login',function(){
     return view('Lawyer Dashboard.logIn_Lawyer');
 });
+
+// Route::;
 
 Route::controller(UserController::class)->group(function () {
 
@@ -65,14 +90,45 @@ Route::controller(lawyersController::class)->group(function () {
     Route::get('Logout', "logOut")->name("Logout");
 });
 
-Route::get("Lawyer_Panel",function(){
-    return view("Lawyer Dashboard.lawyer_Panel");
-})->name("Lawyer_Panel")->middleware(["auth:lawyers","dashmin:lawyer"]);
+// Route::get("Lawyer_Panel",function(){
+//     return view("Lawyer Dashboard.lawyer_Panel");
+// })->name("Lawyer_Panel")->middleware(["auth:lawyers","dashmin:lawyer"]);
+
+Route::get("Lawyer_Panel",[law_FirmsController::class, "allFirms"])->name("Lawyer_Panel")->middleware(["auth:lawyers","dashmin:lawyer"]);
+
+
+Route::get("Law_Firms",[law_FirmsController::class,"showLawfirms"])->name("Law_Firms");
 
 Route::post("lawyer_Details",[lawyersController::class,"lawyerDetails"])->name("lawyer_Details");
 
+Route::post("Add_firms",[law_FirmsController::class,"lawServices"])->name("Add_firms");
+Route::post("firmService",[law_FirmsController::class,"servicesDetail"])->name("firmService");
+// Route::get("Law_Firms",[law_FirmsController::class,"ViewServices"]);
+
 
 // ------------------------------------------------------------------------------------------------------
+        // WEBSITE WORK
+
+// Route::get("services",function(){
+//     return view("Lawyer Website.services");
+// });
+
+Route::get("profiles/{law_firm}/{lawyerId}", [law_FirmsController::class, "LawyerProfiles"])->name('profiles.detail');
+Route::get("servicesList/{law_Firms?}",[law_FirmsController::class, "lawyerServices"])->name("services.List");
+Route::post('book_Appointment',[law_FirmsController::class, 'contactLawyer'])->name('book_Appointment');
+Route::get("servicesdetail/{areaId?}",[law_FirmsController::class, "servicesDetailPg"])->name("services.detail");
+Route::get("contact",[law_FirmsController::class, 'contactfirms'])->name("contact");
+Route::post("contact",[law_FirmsController::class, 'contact'])->name("contact");
+Route::get("about",function(){
+    return view("Lawyer Website.about");
+})->name("about");
+
+
+
+// ------------------------------------------------------------------------------------------------------
+
+
+
 
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\bookAppointmentModel;
 use App\Models\lawyersModel;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
@@ -151,6 +152,24 @@ class UserController extends Controller
         // $lawyers = lawyersModel::all();
         return view("Lawyer Dashboard.index",compact("users"));
     }
+
+    public function lawyers()
+{
+    $lawyerId = Auth::guard('lawyers')->user()->id;
+    // dd($lawyerId); // Confirm the logged-in lawyer ID
+    
+    // Check if data exists for this lawyerId in bookAppointmentModel
+    $lawyerAppointments = bookAppointmentModel::where('lawyerId', $lawyerId)->get();
+    
+    // Debug appointments data
+    // if ($lawyerAppointments->isEmpty()) {
+    //     dd("No appointments found for lawyerId: " . $lawyerId);
+    // }
+
+    // Return view with data
+    return view("Lawyer Dashboard.index", compact("lawyerAppointments"));
+}
+
 
 }
 

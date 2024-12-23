@@ -69,9 +69,9 @@ User Profile
                     <div class="col-md-6">
                       <div class="ttl-info text-start">
                         @if (Auth::guard('lawyers')->check() && Auth::guard('lawyers')->user()->email)
-                          <h6><i class="fa fa-envelope"></i>  Email</h6><span>{{ Auth::guard('lawyers')->user()->email }}</span>
+                          <h6><i class="fa fa-envelope"></i>Email</h6><span>{{ Auth::guard('lawyers')->user()->email }}</span>
                         @else
-                          <h6><i class="fa fa-envelope"></i>  Email</h6><span>{{ Auth::user()->email }}</span>
+                          <h6><i class="fa fa-envelope"></i>Email</h6><span>{{ Auth::user()->email }}</span>
                         @endif
                       </div>
                     </div>
@@ -80,7 +80,7 @@ User Profile
                         @if (Auth::guard('lawyers')->check() && Auth::guard('lawyers')->user())
                         <h6><i class="fa fa-calendar me-1"></i>Designation</h6><span class="mt-1">{{ Auth::guard('lawyers')->user() ? Auth::guard('lawyers')->user()->designation : "Add Designation" }}</span>
                         @elseif (Auth::check() && Auth::user())
-                          <h6><i class="fa fa-calendar"></i>  BOD</h6><span>{{ Auth::user() ? Auth::user()->dob : "Add Your Date of Birth" }}</span>
+                          <h6><i class="fa fa-calendar"></i>BOD</h6><span>{{ Auth::user() ? Auth::user()->dob : "Add Your Date of Birth" }}</span>
                         @endif
                       </div>
                     </div>

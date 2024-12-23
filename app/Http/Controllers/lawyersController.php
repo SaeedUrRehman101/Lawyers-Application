@@ -88,18 +88,33 @@ class lawyersController extends Controller
             "contact" => "required|numeric",
             "province" => "required",
             "address" => "required",
-            "areas" => "required|array",
-            "areas.*" => "string",
+            // "areas" => "required|array",
+            // "areas.*" => "string",
             "working_Place" => "required",
             "designation" => "required",
             "education" => "required",
             "experience" => "required",
             "about" => "required",
-            "image" => "nullable|image|mimes:jpeg,png,jpg,gif|max:2048"
+            "image" => "nullable|image|mimes:jpeg,png,jpg,gif|max:2048",
+            "lawyer_Slots" => "required",
+            "end_time" => "required",
+            "areasId" => "required",
         ]);
 
         $lawyer = lawyersModel::find($request->lawyer_Id);
-        $areas = implode(',', $request->input('areas'));
+        // $areas = implode(',', $request->input('areas'));
+        // $lawyer_Slots = implode(',', $request->input('lawyer_Slots'));
+        // $SlotsEndTime = implode(',', $request->input('end_time'));
+
+        // ---------------------------------------------------------------
+
+        // Combine lawyer_Slots with end_time
+        $slotsWithEndTime = [];
+        foreach ($request->lawyer_Slots as $index => $slot) {
+            $endTime = $request->end_time[$index] ?? '';
+            $slotsWithEndTime[] = $slot . ' to ' . $endTime;
+        }
+        $lawyerSlotsString = implode(',', $slotsWithEndTime);
 
         if ($lawyer) {
             // If image is present, handle the image upload
@@ -127,9 +142,12 @@ class lawyersController extends Controller
             if ($request->has('address')) {
                 $lawyer->address = $request->address;
             }
-            if ($request->has('areas')) {
-                $lawyer->areas = $areas;
+            if ($request->has('areasId')) {
+                $lawyer->areasId = $request->areasId;
             }
+            // if ($request->has('areas')) {
+            //     $lawyer->areas = $areas;
+            // }
             if ($request->has('working_Place')) {
                 $lawyer->working_Place = $request->working_Place;
             }
@@ -145,6 +163,12 @@ class lawyersController extends Controller
             if ($request->has('about')) {
                 $lawyer->about = $request->about;
             }
+            if ($request->has('lawyer_Slots')) {
+                $lawyer->Lawyer_Slots = $lawyerSlotsString;
+            }
+            // if ($request->has('end_time')) {
+            //     $lawyer->slots_EndTime = $SlotsEndTime;
+            // }
 
             $lawyer->save();
             return redirect()->route("Lawyer_Panel")->with("status", "Data Successfully Updated");
@@ -158,6 +182,6 @@ class lawyersController extends Controller
 
     public function logOut(){
         Auth::guard('lawyers')->logout();
-        return redirect()->route('adolt');
+        return redirect()->route('Lawyer_Web');
     }
 }

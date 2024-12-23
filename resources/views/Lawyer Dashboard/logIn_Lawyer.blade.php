@@ -44,7 +44,7 @@
         <div class="col-xl-7 p-0">
           <div class="login-card login-dark login-bg">
             <div>
-              <div><a class="logo text-start" href="index.html"><img class="img-fluid for-light" src="../assets/Dashboard/images/logo/logo.png" alt="looginpage"><img class="img-fluid for-dark" src="../assets/Dashboard/images/logo/logo_dark.png" alt="looginpage"></a></div>
+              <div><a class="logo text-start" href="index.html"><img class="img-fluid for-light" src="/assets/lawyer/img/logo/header5-logo.png" alt="looginpage"><img class="img-fluid for-dark" src="../assets/Dashboard/images/logo/logo_dark.png" alt="looginpage"></a></div>
               <div class="login-main">
                 <form class="theme-form" method="POST" action="{{ route("Lawyer_login") }}">
                   <h3>Sign in to account</h3>
